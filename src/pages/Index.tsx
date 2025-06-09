@@ -6,11 +6,11 @@ const Index = () => {
   const [totalCount, setTotalCount] = useState(0);
   
   const companies = [
-    { name: "Google", count: 221 },
-    { name: "Palantir", count: 3 },
-    { name: "Lockheed Martin", count: 73 },
-    { name: "White House", count: 18 },
-    { name: "Salesforce", count: 382 }
+    { name: "Google", count: 221, logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png" },
+    { name: "Palantir", count: 3, logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Palantir_Technologies_logo.svg/320px-Palantir_Technologies_logo.svg.png" },
+    { name: "Lockheed Martin", count: 73, logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Lockheed_Martin_logo.svg/320px-Lockheed_Martin_logo.svg.png" },
+    { name: "White House", count: 18, logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Seal_of_the_President_of_the_United_States.svg/240px-Seal_of_the_President_of_the_United_States.svg.png" },
+    { name: "Salesforce", count: 382, logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/320px-Salesforce.com_logo.svg.png" }
   ];
 
   useEffect(() => {
@@ -50,26 +50,34 @@ const Index = () => {
         </div>
 
         {/* Scrolling Company Banner */}
-        <div className="w-full max-w-6xl overflow-hidden bg-gray-50 py-4 rounded-lg shadow-inner">
+        <div className="w-full max-w-6xl overflow-hidden bg-gray-50 py-6 rounded-lg shadow-inner">
           <div className="flex animate-scroll whitespace-nowrap">
             {/* First set of companies */}
             {companies.map((company, index) => (
-              <span key={`first-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-gray-800">
-                <span className="font-bold">{company.name}</span>
-                <span className="mx-2">:</span>
-                <span className="text-green-600 font-bold">{company.count}</span>
-                {index < companies.length - 1 && <span className="mx-4 text-gray-400">•</span>}
-              </span>
+              <div key={`first-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-gray-800">
+                <img 
+                  src={company.logo} 
+                  alt={`${company.name} logo`}
+                  className="h-8 w-auto mr-3 object-contain"
+                />
+                <span className="mx-1">:</span>
+                <span className="text-green-600 font-bold ml-2">{company.count}</span>
+                {index < companies.length - 1 && <span className="mx-6 text-gray-400">•</span>}
+              </div>
             ))}
             
             {/* Duplicate set for seamless scrolling */}
             {companies.map((company, index) => (
-              <span key={`second-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-gray-800">
-                <span className="font-bold">{company.name}</span>
-                <span className="mx-2">:</span>
-                <span className="text-green-600 font-bold">{company.count}</span>
-                {index < companies.length - 1 && <span className="mx-4 text-gray-400">•</span>}
-              </span>
+              <div key={`second-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-gray-800">
+                <img 
+                  src={company.logo} 
+                  alt={`${company.name} logo`}
+                  className="h-8 w-auto mr-3 object-contain"
+                />
+                <span className="mx-1">:</span>
+                <span className="text-green-600 font-bold ml-2">{company.count}</span>
+                {index < companies.length - 1 && <span className="mx-6 text-gray-400">•</span>}
+              </div>
             ))}
           </div>
         </div>
