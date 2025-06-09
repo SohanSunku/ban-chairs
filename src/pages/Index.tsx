@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
 const Index = () => {
-  const [totalCount, setTotalCount] = useState(0);
+  const [totalCount, setTotalCount] = useState(12231);
   
   const companies = [
     { name: "Google", count: 221, logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png" },
@@ -13,9 +13,32 @@ const Index = () => {
     { name: "Salesforce", count: 382, logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/320px-Salesforce.com_logo.svg.png" }
   ];
 
+  const protestImages = [
+    {
+      src: "https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?w=400&h=300&fit=crop",
+      alt: "Standing workers rally"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=400&h=300&fit=crop",
+      alt: "Anti-chair demonstration"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=400&h=300&fit=crop",
+      alt: "Stand up movement"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop",
+      alt: "Health awareness protest"
+    }
+  ];
+
+  // Constantly updating counter
   useEffect(() => {
-    const total = companies.reduce((sum, company) => sum + company.count, 0);
-    setTotalCount(total);
+    const interval = setInterval(() => {
+      setTotalCount(prev => prev + Math.floor(Math.random() * 3) + 1);
+    }, 3000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const handleJoinMovement = () => {
@@ -24,77 +47,144 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col">
       {/* Header Banner */}
-      <header className="w-full bg-white border-b border-gray-200">
+      <header className="w-full bg-background border-b border-border">
         <div className="container mx-auto px-4 py-8 text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black tracking-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight">
             BAN CHAIRS
           </h1>
-          <p className="text-gray-600 mt-2 text-sm md:text-base">
+          <p className="text-muted-foreground mt-2 text-sm md:text-base">
             Standing up for a better tomorrow
           </p>
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="flex-1 flex flex-col justify-center items-center px-4">
-        {/* CTA Button */}
-        <div className="mb-16">
+      {/* Join Movement Button */}
+      <section className="w-full py-8 bg-background">
+        <div className="container mx-auto px-4 text-center">
           <Button 
             onClick={handleJoinMovement}
-            className="bg-black text-white hover:bg-gray-800 text-lg md:text-xl px-8 md:px-12 py-3 md:py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+            className="bg-foreground text-background hover:bg-foreground/90 text-lg md:text-xl px-8 md:px-12 py-3 md:py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
           >
             Join the Movement
           </Button>
         </div>
+      </section>
 
-        {/* Scrolling Company Banner */}
-        <div className="w-full max-w-6xl overflow-hidden bg-gray-50 py-6 rounded-lg shadow-inner">
-          <div className="flex animate-scroll whitespace-nowrap">
-            {/* First set of companies */}
-            {companies.map((company, index) => (
-              <div key={`first-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-gray-800">
+      {/* Scrolling Company Banner */}
+      <section className="w-full py-6 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <div className="w-full max-w-6xl mx-auto overflow-hidden bg-card py-6 rounded-lg shadow-inner border">
+            <div className="flex animate-scroll whitespace-nowrap">
+              {/* First set of companies */}
+              {companies.map((company, index) => (
+                <div key={`first-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-card-foreground">
+                  <img 
+                    src={company.logo} 
+                    alt={`${company.name} logo`}
+                    className="h-8 w-auto mr-3 object-contain"
+                  />
+                  <span className="mx-1">:</span>
+                  <span className="text-primary font-bold ml-2">{company.count}</span>
+                  {index < companies.length - 1 && <span className="mx-6 text-muted-foreground">•</span>}
+                </div>
+              ))}
+              
+              {/* Duplicate set for seamless scrolling */}
+              {companies.map((company, index) => (
+                <div key={`second-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-card-foreground">
+                  <img 
+                    src={company.logo} 
+                    alt={`${company.name} logo`}
+                    className="h-8 w-auto mr-3 object-contain"
+                  />
+                  <span className="mx-1">:</span>
+                  <span className="text-primary font-bold ml-2">{company.count}</span>
+                  {index < companies.length - 1 && <span className="mx-6 text-muted-foreground">•</span>}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Live Total Counter */}
+      <section className="w-full py-8 bg-background">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-muted-foreground text-sm md:text-base">
+            Total supporters: 
+            <span className="font-bold text-foreground ml-2 text-lg">{totalCount.toLocaleString()}</span>
+          </p>
+        </div>
+      </section>
+
+      {/* Protest Gallery */}
+      <section className="w-full py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-8">
+            The Movement in Action
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            {protestImages.map((image, index) => (
+              <div 
+                key={index} 
+                className="group overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              >
                 <img 
-                  src={company.logo} 
-                  alt={`${company.name} logo`}
-                  className="h-8 w-auto mr-3 object-contain"
+                  src={image.src} 
+                  alt={image.alt}
+                  className="w-full h-32 md:h-40 object-cover group-hover:brightness-110 transition-all duration-300"
                 />
-                <span className="mx-1">:</span>
-                <span className="text-green-600 font-bold ml-2">{company.count}</span>
-                {index < companies.length - 1 && <span className="mx-6 text-gray-400">•</span>}
-              </div>
-            ))}
-            
-            {/* Duplicate set for seamless scrolling */}
-            {companies.map((company, index) => (
-              <div key={`second-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-gray-800">
-                <img 
-                  src={company.logo} 
-                  alt={`${company.name} logo`}
-                  className="h-8 w-auto mr-3 object-contain"
-                />
-                <span className="mx-1">:</span>
-                <span className="text-green-600 font-bold ml-2">{company.count}</span>
-                {index < companies.length - 1 && <span className="mx-6 text-gray-400">•</span>}
               </div>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* Total Counter */}
-        <div className="mt-8 text-center">
-          <p className="text-gray-600 text-sm md:text-base">
-            Total supporters: 
-            <span className="font-bold text-black ml-2 text-lg">{totalCount.toLocaleString()}</span>
-          </p>
+      {/* Why Section - Partially Visible */}
+      <section className="w-full py-20 bg-gradient-to-b from-background to-muted/50 min-h-[60vh]">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
+              Why Ban Chairs?
+            </h2>
+            <div className="space-y-6 text-lg text-muted-foreground">
+              <p>
+                Sitting is the new smoking. Studies show that prolonged sitting increases the risk of 
+                cardiovascular disease, diabetes, and premature death by up to 40%.
+              </p>
+              <p>
+                Standing desks improve posture, boost energy levels, and increase productivity by 
+                23% on average. Join thousands who have already made the switch.
+              </p>
+              <p>
+                Our bodies were designed to move, not to be confined to chairs for 8+ hours a day. 
+                It's time to stand up for our health, literally.
+              </p>
+            </div>
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div className="space-y-2">
+                <div className="text-3xl font-bold text-primary">40%</div>
+                <div className="text-sm text-muted-foreground">Reduced disease risk</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-3xl font-bold text-primary">23%</div>
+                <div className="text-sm text-muted-foreground">Productivity increase</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-3xl font-bold text-primary">8+</div>
+                <div className="text-sm text-muted-foreground">Hours we sit daily</div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
 
       {/* Footer */}
-      <footer className="w-full py-6 border-t border-gray-200">
+      <footer className="w-full py-6 border-t border-border bg-background">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-500 text-sm">
+          <p className="text-muted-foreground text-sm">
             Together we stand, literally.
           </p>
         </div>
