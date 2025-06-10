@@ -200,11 +200,9 @@ const Index = () => {
               Why?
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Sitting is the new smoking. Studies show that prolonged sitting increases the risk of 
-              cardiovascular disease, diabetes, and premature death by up to 40%. Our bodies were designed 
-              to move, not to be confined to chairs for 8+ hours a day. Standing desks improve posture, 
-              boost energy levels, and increase productivity by 23% on average. It's time to stand up 
-              for our health, literally.
+              90% of Americans experience back pain. For 60%, this becomes a chronic lifetime issue. Low back pain, a tight neck, an ache between your shoulder blades, herniated disks, sciatica.
+              These are abundantly common issues that we have come to accept as the cost of aging. Except, even college students are facing these issues at alarmingly high rates.
+              Our solutions suck. Vague references to your "core" or misinformation about "posture". Physical therapists and Chiropractors we pay too much for. Multibillion dollar industries have evolved around the fact of chronic pain, whether that's standing desk cos or opiod peddling pharma companies.
             </p>
           </div>
         </div>
