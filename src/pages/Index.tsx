@@ -25,7 +25,7 @@ const Index = () => {
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/320px-Salesforce.com_logo.svg.png"
   }];
   const protestImages = [{
-    src: "SohanSunku/movement-banner-scroll/src/pages/images/IMG_1018.jpg",
+    src: "./images/IMG_1018.jpg",
     alt: "Starbucks"
   }, {
     src: "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=400&h=300&fit=crop",
