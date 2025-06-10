@@ -5,6 +5,7 @@ import Autoplay from "embla-carousel-autoplay";
 import starbucksImage from "./images/IMG_1018.jpg";
 import cops from "./images/cops.png"; // Fixed: changed from cop.png to cops.png
 import rfk from "./images/rfk.jpg";
+
 const Index = () => {
   const [totalCount, setTotalCount] = useState(12231);
   const [displayCount, setDisplayCount] = useState(12231);
@@ -78,7 +79,7 @@ const Index = () => {
     title: "RFK Junior's MAHA Targets Sitting",
     source: "The Washington Post",
     date: "May 8, 2025",
-    image: starbucksImage,
+    image: rfk,
     excerpt: "Sitting is the new smoking, echoes RFK Junior during White House address. Gen Z protestors in San Francisco Agree."
   }, {
     title: "Public Outrage After SFPD Officer Laughs at Protesters",
