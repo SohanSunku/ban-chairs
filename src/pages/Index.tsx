@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 const Index = () => {
   const [totalCount, setTotalCount] = useState(12231);
+  const [displayCount, setDisplayCount] = useState(12231);
   
   const companies = [
     { name: "Google", count: 221, logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png" },
@@ -41,6 +42,28 @@ const Index = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Animated counter effect
+  useEffect(() => {
+    const duration = 1000; // 1 second animation
+    const steps = 60; // 60 fps
+    const increment = (totalCount - displayCount) / steps;
+    
+    if (Math.abs(totalCount - displayCount) > 0.1) {
+      const timer = setInterval(() => {
+        setDisplayCount(prev => {
+          const next = prev + increment;
+          if (Math.abs(next - totalCount) < Math.abs(increment)) {
+            clearInterval(timer);
+            return totalCount;
+          }
+          return next;
+        });
+      }, duration / steps);
+
+      return () => clearInterval(timer);
+    }
+  }, [totalCount, displayCount]);
+
   const handleJoinMovement = () => {
     console.log("User clicked to join the movement!");
     // This would typically redirect to a signup form or modal
@@ -75,32 +98,32 @@ const Index = () => {
       {/* Scrolling Company Banner */}
       <section className="w-full py-6 bg-muted/50">
         <div className="container mx-auto px-4">
-          <div className="w-full max-w-6xl mx-auto overflow-hidden bg-card py-6 rounded-lg shadow-inner border">
+          <div className="w-full max-w-6xl mx-auto overflow-hidden py-6">
             <div className="flex animate-scroll whitespace-nowrap">
               {/* First set of companies */}
               {companies.map((company, index) => (
-                <div key={`first-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-card-foreground">
+                <div key={`first-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-foreground">
                   <img 
                     src={company.logo} 
                     alt={`${company.name} logo`}
                     className="h-8 w-auto mr-3 object-contain"
                   />
                   <span className="mx-1">:</span>
-                  <span className="text-primary font-bold ml-2">{company.count}</span>
+                  <span className="text-primary font-bold ml-2 text-sm">{company.count}</span>
                   {index < companies.length - 1 && <span className="mx-6 text-muted-foreground">•</span>}
                 </div>
               ))}
               
               {/* Duplicate set for seamless scrolling */}
               {companies.map((company, index) => (
-                <div key={`second-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-card-foreground">
+                <div key={`second-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-foreground">
                   <img 
                     src={company.logo} 
                     alt={`${company.name} logo`}
                     className="h-8 w-auto mr-3 object-contain"
                   />
                   <span className="mx-1">:</span>
-                  <span className="text-primary font-bold ml-2">{company.count}</span>
+                  <span className="text-primary font-bold ml-2 text-sm">{company.count}</span>
                   {index < companies.length - 1 && <span className="mx-6 text-muted-foreground">•</span>}
                 </div>
               ))}
@@ -114,7 +137,7 @@ const Index = () => {
         <div className="container mx-auto px-4 text-center">
           <p className="text-muted-foreground text-sm md:text-base">
             Total supporters: 
-            <span className="font-bold text-foreground ml-2 text-lg">{totalCount.toLocaleString()}</span>
+            <span className="font-bold text-foreground ml-2 text-lg">{Math.floor(displayCount).toLocaleString()}</span>
           </p>
         </div>
       </section>
