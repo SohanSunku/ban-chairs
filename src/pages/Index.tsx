@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import starbucksImage from "./images/IMG_1018.jpg";
+import cops from "./images/cop.png";
 const Index = () => {
   const [totalCount, setTotalCount] = useState(12231);
   const [displayCount, setDisplayCount] = useState(12231);
@@ -29,8 +30,8 @@ const Index = () => {
     src: starbucksImage,
     alt: "Starbucks"
   }, {
-    src: "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=400&h=300&fit=crop",
-    alt: "Anti-chair demonstration"
+    src: cops
+    alt: "cops"
   }, {
     src: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=400&h=300&fit=crop",
     alt: "Stand up movement"
