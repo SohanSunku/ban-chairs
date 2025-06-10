@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import starbucksImage from "./images/IMG_1018.jpg";
-import cops from "./images/cops.png";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-
+import cops from "./images/cops.png"; // Fixed: changed from cop.png to cops.png
+import rfk from "./images/rfk.jpg";
 const Index = () => {
   const [totalCount, setTotalCount] = useState(12231);
   const [displayCount, setDisplayCount] = useState(12231);
@@ -28,6 +26,19 @@ const Index = () => {
     name: "Salesforce",
     count: 382,
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/320px-Salesforce.com_logo.svg.png"
+  }];
+  const protestImages = [{
+    src: starbucksImage,
+    alt: "Starbucks"
+  }, {
+    src: cops,
+    alt: "cops"
+  }, {
+    src: rfk,
+    alt: "rfk"
+  }, {
+    src: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop",
+    alt: "Health awareness protest"
   }];
 
   // Constantly updating counter
