@@ -5,6 +5,7 @@ import Autoplay from "embla-carousel-autoplay";
 import starbucksImage from "./images/IMG_1018.jpg";
 import cops from "./images/cops.jpeg";
 import rfk from "./images/rfk.jpg";
+import chronicPainImage from "./images/IMG_0925.jpg";
 
 const Index = () => {
   const [totalCount, setTotalCount] = useState(12231);
@@ -89,7 +90,7 @@ const Index = () => {
     title: "Chronic Pain Crisis Grips Corporate America",
     source: "Forbes",
     date: "Jan 15, 2025",
-    image: "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=400&h=300&fit=crop",
+    image: chronicPainImage,
     excerpt: "New study reveals 85% of office workers suffer from chronic back and neck pain, costing companies billions in lost productivity and healthcare expenses."
   }, {
     title: "Herman Miller Refuses to Teach Proper Sitting",
@@ -181,7 +182,7 @@ const Index = () => {
                         <img 
                           src={article.image} 
                           alt={article.title} 
-                          className={`w-full h-32 ${article.image === cops ? 'object-cover object-top ' : 'object-cover'}`}
+                          className={`w-full h-32 ${article.image === cops ? 'object-cover object-top ' : article.image === chronicPainImage ? 'object-cover grayscale' : 'object-cover'}`}
                         />
                       </div>
                       <div className="p-4">
