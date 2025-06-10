@@ -92,7 +92,7 @@ const Index = () => {
       </section>
 
       {/* Scrolling Company Banner */}
-      <section className="w-full py-6 bg-muted/50">
+      <section className="w-full py-6 bg-transparent">
         <div className="container mx-auto px-4">
           <div className="w-full max-w-6xl mx-auto overflow-hidden py-6">
             <div className="flex animate-scroll whitespace-nowrap">
