@@ -86,7 +86,7 @@ const Index = () => {
     source: "San Francisco Chronicle",
     date: "Jun 5, 2025",
     image: cops,
-    excerpt: "Man protesting chairs reportedly walked up to officers and asked to be arrested. Two kind officers declined and supported his right to protest."
+    excerpt: "Man protesting chairs reportedly walked up to officers and asked to be arrested. Officer Mustachio declined, citing first amendment right to protest."
   }, {
     title: "Standing Movement Gains Momentum in Corporate America",
     source: "The New York Times",
