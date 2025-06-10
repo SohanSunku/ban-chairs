@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import starbucksImage from "./images/IMG_1018.jpg";
 import cops from "./images/cops.png";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+
 const Index = () => {
   const [totalCount, setTotalCount] = useState(12231);
   const [displayCount, setDisplayCount] = useState(12231);
@@ -26,19 +27,6 @@ const Index = () => {
     name: "Salesforce",
     count: 382,
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/320px-Salesforce.com_logo.svg.png"
-  }];
-  const protestImages = [{
-    src: starbucksImage,
-    alt: "Starbucks"
-  }, {
-    src: cops,
-    alt: "cops"
-  }, {
-    src: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=400&h=300&fit=crop",
-    alt: "Stand up movement"
-  }, {
-    src: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop",
-    alt: "Health awareness protest"
   }];
 
   // Constantly updating counter
@@ -76,28 +64,28 @@ const Index = () => {
   const pressArticles = [
     {
       title: "Major Coffee Chain Removes All Seating After Employee Health Study",
-      source: "Health Business Daily",
+      source: "San Francisco Chronicle",
       date: "Dec 8, 2024",
       image: starbucksImage,
       excerpt: "Following a comprehensive study showing 73% reduction in back pain complaints, the popular coffee chain announced the removal of all chairs from their locations."
     },
     {
       title: "Law Enforcement Agencies Adopt Standing-Only Policies",
-      source: "Public Safety News",
+      source: "The Washington Post",
       date: "Dec 5, 2024", 
       image: cops,
       excerpt: "Police departments across the nation report improved alertness and reduced fatigue after implementing standing desk policies in their offices."
     },
     {
       title: "Standing Movement Gains Momentum in Corporate America",
-      source: "Business Weekly",
+      source: "The New York Times",
       date: "Dec 3, 2024",
       image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=400&h=300&fit=crop",
       excerpt: "Fortune 500 companies are investing millions in ergonomic standing solutions as the anti-chair movement reshapes workplace culture."
     },
     {
       title: "Medical Community Endorses Chair-Free Workspaces",
-      source: "Medical Tribune",
+      source: "USA Today",
       date: "Nov 30, 2024",
       image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop",
       excerpt: "Leading healthcare professionals cite overwhelming evidence supporting the elimination of prolonged sitting in professional environments."
@@ -159,76 +147,61 @@ const Index = () => {
       </section>
 
       {/* Press Coverage Section */}
-      <section className="w-full py-16 bg-muted/30">
+      <section className="w-full py-16 bg-black">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
             In the Press
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {pressArticles.map((article, index) => (
-              <div key={index} className="group bg-background rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 overflow-hidden">
-                <div className="overflow-hidden">
-                  <img 
-                    src={article.image} 
-                    alt={article.title} 
-                    className="w-full h-48 object-cover group-hover:brightness-110 transition-all duration-300" 
-                  />
-                </div>
-                <div className="p-4">
-                  <div className="flex items-center justify-between text-xs text-muted-foreground mb-2">
-                    <span className="font-medium">{article.source}</span>
-                    <span>{article.date}</span>
-                  </div>
-                  <h3 className="font-semibold text-sm mb-2 text-foreground line-clamp-2 leading-tight">
-                    {article.title}
-                  </h3>
-                  <p className="text-xs text-muted-foreground line-clamp-3">
-                    {article.excerpt}
-                  </p>
-                </div>
-              </div>
-            ))}
+          <div className="max-w-2xl mx-auto">
+            <Carousel>
+              <CarouselContent>
+                {pressArticles.map((article, index) => (
+                  <CarouselItem key={index}>
+                    <div className="bg-white rounded-lg shadow-lg overflow-hidden mx-2">
+                      <div className="overflow-hidden">
+                        <img 
+                          src={article.image} 
+                          alt={article.title} 
+                          className="w-full h-64 object-cover" 
+                        />
+                      </div>
+                      <div className="p-6">
+                        <div className="flex items-center justify-between text-sm text-muted-foreground mb-3">
+                          <span className="font-medium">{article.source}</span>
+                          <span>{article.date}</span>
+                        </div>
+                        <h3 className="font-bold text-xl mb-4 text-foreground leading-tight">
+                          {article.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {article.excerpt}
+                        </p>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="text-white border-white hover:bg-white hover:text-black" />
+              <CarouselNext className="text-white border-white hover:bg-white hover:text-black" />
+            </Carousel>
           </div>
         </div>
       </section>
 
-      {/* Why Section - Partially Visible */}
-      
-
-      <section className="w-full py-20 bg-gradient-to-b from-background to-muted/50 min-h-[60vh]">
+      {/* Why Section */}
+      <section className="w-full py-20 bg-gradient-to-b from-background to-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
-              Why Ban Chairs?
+              Why?
             </h2>
-            <div className="space-y-6 text-lg text-muted-foreground">
-              <p>
-                Sitting is the new smoking. Studies show that prolonged sitting increases the risk of 
-                cardiovascular disease, diabetes, and premature death by up to 40%.
-              </p>
-              <p>
-                Standing desks improve posture, boost energy levels, and increase productivity by 
-                23% on average. Join thousands who have already made the switch.
-              </p>
-              <p>
-                Our bodies were designed to move, not to be confined to chairs for 8+ hours a day. 
-                It's time to stand up for our health, literally.
-              </p>
-            </div>
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div className="space-y-2">
-                <div className="text-3xl font-bold text-primary">40%</div>
-                <div className="text-sm text-muted-foreground">Reduced disease risk</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-3xl font-bold text-primary">23%</div>
-                <div className="text-sm text-muted-foreground">Productivity increase</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-3xl font-bold text-primary">8+</div>
-                <div className="text-sm text-muted-foreground">Hours we sit daily</div>
-              </div>
-            </div>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Sitting is the new smoking. Studies show that prolonged sitting increases the risk of 
+              cardiovascular disease, diabetes, and premature death by up to 40%. Our bodies were designed 
+              to move, not to be confined to chairs for 8+ hours a day. Standing desks improve posture, 
+              boost energy levels, and increase productivity by 23% on average. It's time to stand up 
+              for our health, literally.
+            </p>
           </div>
         </div>
       </section>
