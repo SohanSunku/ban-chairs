@@ -16,8 +16,8 @@ const Index = () => {
 
   const protestImages = [
     {
-      src: "src/pages/images/IMG_1018.jpg",
-      alt: "Standing workers rally"
+      src: "SohanSunku/movement-banner-scroll/src/pages/images/IMG_1018.jpg",
+      alt: "Starbucks"
     },
     {
       src: "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=400&h=300&fit=crop",
