@@ -156,9 +156,11 @@ const Index = () => {
       {/* Press Coverage Section */}
       <section className="w-full bg-background py-0">
         <div className="container mx-auto px-4">
-          <h2 className="md:text-4xl font-bold text-left text-foreground mb-6 text-xl">
-            Press
-          </h2>
+          <div className="max-w-2xl mx-auto">
+            <h2 className="md:text-4xl font-bold text-foreground mb-6 text-xl">
+              Press
+            </h2>
+          </div>
         </div>
       </section>
 
