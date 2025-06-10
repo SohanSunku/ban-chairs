@@ -119,26 +119,38 @@ const Index = () => {
               <span className="relative inline-block">
                 BAN CHAIRS
                 <svg 
-                  className="absolute -bottom-2 left-0 w-full h-6" 
-                  viewBox="0 0 300 20" 
+                  className="absolute -bottom-2 left-0 w-full h-8" 
+                  viewBox="0 0 300 25" 
                   xmlns="http://www.w3.org/2000/svg"
                   preserveAspectRatio="none"
                 >
+                  {/* Spine vertebrae */}
+                  {Array.from({length: 12}, (_, i) => (
+                    <g key={i}>
+                      <ellipse 
+                        cx={25 + i * 23} 
+                        cy="12" 
+                        rx="8" 
+                        ry="6" 
+                        fill="#dc2626" 
+                        opacity="0.9"
+                      />
+                      <ellipse 
+                        cx={25 + i * 23} 
+                        cy="12" 
+                        rx="5" 
+                        ry="3" 
+                        fill="#991b1b" 
+                      />
+                    </g>
+                  ))}
+                  {/* Connecting spinal cord */}
                   <path 
-                    d="M5,15 Q75,5 150,12 T295,8" 
-                    stroke="#dc2626" 
-                    strokeWidth="4" 
-                    fill="none" 
-                    strokeLinecap="round"
-                    className="animate-pulse"
-                  />
-                  <path 
-                    d="M8,17 Q78,7 153,14 T298,10" 
-                    stroke="#ef4444" 
+                    d="M25,12 Q80,10 150,12 T275,12" 
+                    stroke="#7f1d1d" 
                     strokeWidth="2" 
                     fill="none" 
-                    strokeLinecap="round"
-                    opacity="0.7"
+                    opacity="0.8"
                   />
                 </svg>
               </span>
