@@ -62,11 +62,11 @@ const Index = () => {
     // This would typically redirect to a signup form or modal
   };
   const pressArticles = [{
-    title: "Major Coffee Chain Removes All Seating After Employee Health Study",
-    source: "San Francisco Chronicle",
-    date: "Dec 8, 2024",
+    title: "RFK Junior's MAHA Targets Sitting",
+    source: "Washington Post",
+    date: "May 8, 2025",
     image: starbucksImage,
-    excerpt: "Following a comprehensive study showing 73% reduction in back pain complaints, the popular coffee chain announced the removal of all chairs from their locations."
+    excerpt: "Sitting is the new smoking, echoes RFK Junior during White House address. Gen Z protestors in San Francisco Agree."
   }, {
     title: "Law Enforcement Agencies Adopt Standing-Only Policies",
     source: "The Washington Post",
