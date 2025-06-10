@@ -1,15 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-<<<<<<< HEAD
 import talking from "./images/talking.PNG";
 import street from "./images/embarcadero.jpg";
 import cops from "./images/cops.jpg";
-
-
-
-=======
-import starbucksImage from "./images/IMG_1018.jpg";
->>>>>>> 4e0373d149e3b80a84229ae26d5c88f70f91649e
 const Index = () => {
   const [totalCount, setTotalCount] = useState(12231);
   const [displayCount, setDisplayCount] = useState(12231);
