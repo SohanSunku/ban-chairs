@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import starbucksImage from "./images/IMG_1018.jpg";
-import cops from "./images/cops.png"; // Fixed: changed from cop.png to cops.png
+import cops from "./images/cops.png";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 const Index = () => {
   const [totalCount, setTotalCount] = useState(12231);
   const [displayCount, setDisplayCount] = useState(12231);
@@ -67,10 +68,12 @@ const Index = () => {
       return () => clearInterval(timer);
     }
   }, [totalCount, displayCount]);
+  
   const handleJoinMovement = () => {
     console.log("User clicked to join the movement!");
     // This would typically redirect to a signup form or modal
   };
+  
   return <div className="min-h-screen bg-background flex flex-col">
       {/* Header Banner */}
       
@@ -124,18 +127,30 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Protest Gallery */}
-      
-
+      {/* Protest Gallery - Now a Scrolling Carousel */}
       <section className="w-full py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-8">
             The Movement in Action
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            {protestImages.map((image, index) => <div key={index} className="group overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                <img src={image.src} alt={image.alt} className="w-full h-32 md:h-40 object-cover group-hover:brightness-110 transition-all duration-300" />
-              </div>)}
+          <div className="max-w-4xl mx-auto">
+            <Carousel className="w-full">
+              <CarouselContent>
+                {protestImages.map((image, index) => (
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                    <div className="group overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                      <img 
+                        src={image.src} 
+                        alt={image.alt} 
+                        className="w-full h-48 md:h-56 object-cover group-hover:brightness-110 transition-all duration-300" 
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </div>
       </section>
