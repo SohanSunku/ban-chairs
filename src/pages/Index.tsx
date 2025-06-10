@@ -238,7 +238,7 @@ const Index = () => {
             <p className="text-base text-muted-foreground leading-relaxed">
               Ever had an ache between your shoulder blades, low back pain, a tight neck? 90% of Americans experience back pain, for 60% it becoms chronic. Its not your core and you don't need surgery.
               <br></br> <br></br>
-              The medical industry failed us, so we talked to all the experts. Turns out people don't know how to sit, <i>and</i> most chairs really suck. 
+              The medical industry failed us, so we talked to all the experts. Turns out people don't know how to sit, <i>and</i> most chairs really suck. We're here to help.
             </p>
           </div>
         </div>
