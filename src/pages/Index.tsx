@@ -73,6 +73,7 @@ const Index = () => {
   };
   return <div className="min-h-screen bg-background flex flex-col">
       {/* Header Banner */}
+      
       <header className="w-full bg-background border-b border-border">
         <div className="container mx-auto px-4 py-8 text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight">
@@ -84,7 +85,6 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Join Movement Button */}
       <section className="w-full py-8 bg-background">
         <div className="container mx-auto px-4 text-center">
           <Button onClick={handleJoinMovement} className="bg-foreground text-background hover:bg-foreground/90 text-lg md:text-xl px-8 md:px-12 py-3 md:py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
@@ -93,8 +93,6 @@ const Index = () => {
         </div>
       </section>
 
-
-      {/* Live Total Counter */}
       <section className="w-full bg-background py-0">
         <div className="container mx-auto px-4 text-center">
           <p className="text-muted-foreground text-sm md:text-base">
@@ -104,25 +102,25 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Scrolling Company Banner */}
+      {/* Scrolling Company Banner - Updated with larger logos */}
       <section className="w-full bg-transparent py-0">
         <div className="container mx-auto px-4">
           <div className="w-full max-w-6xl mx-auto overflow-hidden py-6">
             <div className="flex animate-scroll whitespace-nowrap">
               {/* First set of companies */}
-              {companies.map((company, index) => <div key={`first-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-foreground">
-                  <img src={company.logo} alt={`${company.name} logo`} className="h-8 w-auto mr-3 object-contain" />
-                  <span className="mx-1">:</span>
-                  <span className="text-primary font-bold ml-2 text-sm">{company.count}</span>
-                  {index < companies.length - 1 && <span className="mx-6 text-muted-foreground"></span>}
+              {companies.map((company, index) => <div key={`first-${index}`} className="inline-flex items-center mx-12 text-2xl md:text-3xl font-medium text-foreground">
+                  <img src={company.logo} alt={`${company.name} logo`} className="h-16 md:h-20 w-auto mr-4 object-contain" />
+                  <span className="mx-2">:</span>
+                  <span className="text-primary font-bold ml-3 text-lg md:text-xl">{company.count}</span>
+                  {index < companies.length - 1 && <span className="mx-8 text-muted-foreground"></span>}
                 </div>)}
               
               {/* Duplicate set for seamless scrolling */}
-              {companies.map((company, index) => <div key={`second-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-foreground">
-                  <img src={company.logo} alt={`${company.name} logo`} className="h-8 w-auto mr-3 object-contain" />
-                  <span className="mx-1">:</span>
-                  <span className="text-primary font-bold ml-2 text-sm">{company.count}</span>
-                  {index < companies.length - 1 && <span className="mx-6 text-muted-foreground">•</span>}
+              {companies.map((company, index) => <div key={`second-${index}`} className="inline-flex items-center mx-12 text-2xl md:text-3xl font-medium text-foreground">
+                  <img src={company.logo} alt={`${company.name} logo`} className="h-16 md:h-20 w-auto mr-4 object-contain" />
+                  <span className="mx-2">:</span>
+                  <span className="text-primary font-bold ml-3 text-lg md:text-xl">{company.count}</span>
+                  {index < companies.length - 1 && <span className="mx-8 text-muted-foreground">•</span>}
                 </div>)}
             </div>
           </div>
@@ -130,6 +128,8 @@ const Index = () => {
       </section>
 
       {/* Protest Gallery */}
+      
+
       <section className="w-full py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-8">
@@ -144,6 +144,8 @@ const Index = () => {
       </section>
 
       {/* Why Section - Partially Visible */}
+      
+
       <section className="w-full py-20 bg-gradient-to-b from-background to-muted/50 min-h-[60vh]">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
