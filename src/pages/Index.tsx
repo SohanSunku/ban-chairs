@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import starbucksImage from "./images/IMG_1018.jpg";
+
 const Index = () => {
   const [totalCount, setTotalCount] = useState(12231);
   const [displayCount, setDisplayCount] = useState(12231);
@@ -25,7 +27,7 @@ const Index = () => {
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/320px-Salesforce.com_logo.svg.png"
   }];
   const protestImages = [{
-    src: "./images/IMG_1018.jpg",
+    src: starbucksImage,
     alt: "Starbucks"
   }, {
     src: "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=400&h=300&fit=crop",
