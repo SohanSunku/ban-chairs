@@ -1,5 +1,4 @@
 
-
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
@@ -119,13 +118,29 @@ const Index = () => {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight relative">
               <span className="relative inline-block">
                 BAN CHAIRS
-                <div className="absolute -bottom-1 left-0 w-full h-2 bg-red-500 opacity-90 transform -skew-x-6 -rotate-1 rounded-sm" 
-                     style={{
-                       background: 'linear-gradient(45deg, #991b1b 0%, #7f1d1d 25%, #991b1b 50%, #7f1d1d 75%, #991b1b 100%)',
-                       filter: 'blur(0.5px) contrast(1.2)',
-                       boxShadow: 'inset 0 0 2px rgba(0,0,0,0.3)'
-                     }}>
-                </div>
+                <svg 
+                  className="absolute -bottom-2 left-0 w-full h-6" 
+                  viewBox="0 0 300 20" 
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="none"
+                >
+                  <path 
+                    d="M5,15 Q75,5 150,12 T295,8" 
+                    stroke="#dc2626" 
+                    strokeWidth="4" 
+                    fill="none" 
+                    strokeLinecap="round"
+                    className="animate-pulse"
+                  />
+                  <path 
+                    d="M8,17 Q78,7 153,14 T298,10" 
+                    stroke="#ef4444" 
+                    strokeWidth="2" 
+                    fill="none" 
+                    strokeLinecap="round"
+                    opacity="0.7"
+                  />
+                </svg>
               </span>
             </h1>
           </div>
@@ -246,4 +261,3 @@ const Index = () => {
     </div>;
 };
 export default Index;
-
