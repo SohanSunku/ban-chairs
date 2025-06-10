@@ -182,7 +182,7 @@ const Index = () => {
                         <img 
                           src={article.image} 
                           alt={article.title} 
-                          className={`w-full h-32 ${article.image === cops ? 'object-cover object-center' : 'object-cover'}`}
+                          className={`w-full h-32 ${article.image === cops ? 'object-cover object-top ' : 'object-cover'}`}
                         />
                       </div>
                       <div className="p-4">
