@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
@@ -114,8 +115,11 @@ const Index = () => {
               alt="Ban Chairs Logo" 
               className="h-12 md:h-16 w-auto object-contain"
             />
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight">
-              BAN CHAIRS
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight relative">
+              <span className="relative inline-block">
+                BAN CHAIRS
+                <div className="absolute bottom-0 left-0 w-full h-3 bg-red-500 opacity-60 transform -skew-x-12 -rotate-1"></div>
+              </span>
             </h1>
           </div>
         </div>
