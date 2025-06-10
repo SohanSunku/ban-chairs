@@ -16,8 +16,8 @@ const Index = () => {
 
   const protestImages = [
     {
-      src: "/images/IMG_1018.jpg",
-      alt: "Starbucks protest"
+      src: "SohanSunku/movement-banner-scroll/src/pages/images/IMG_1018.jpg",
+      alt: "Starbucks"
     },
     {
       src: "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=400&h=300&fit=crop",
@@ -70,64 +70,61 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 flex flex-col overflow-hidden">
-      {/* Header Banner with Enhanced Animation */}
-      <header className="w-full bg-gradient-to-r from-background to-muted/30 border-b border-border relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent animate-pulse"></div>
-        <div className="container mx-auto px-4 py-12 text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold text-foreground tracking-tight animate-fade-in transform hover:scale-105 transition-all duration-500">
+    <div className="min-h-screen bg-background flex flex-col">
+      {/* Header Banner */}
+      <header className="w-full bg-background border-b border-border">
+        <div className="container mx-auto px-4 py-8 text-center">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight">
             BAN CHAIRS
           </h1>
-          <p className="text-muted-foreground mt-4 text-sm md:text-lg animate-fade-in delay-300 transform translate-y-2 opacity-0 [animation-fill-mode:forwards]">
+          <p className="text-muted-foreground mt-2 text-sm md:text-base">
             Standing up for a better tomorrow
           </p>
         </div>
       </header>
 
-      {/* Enhanced Join Movement Button */}
-      <section className="w-full py-12 bg-gradient-to-r from-background to-muted/10 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent animate-pulse"></div>
-        <div className="container mx-auto px-4 text-center relative z-10">
+      {/* Join Movement Button */}
+      <section className="w-full py-8 bg-background">
+        <div className="container mx-auto px-4 text-center">
           <Button 
             onClick={handleJoinMovement}
-            className="bg-gradient-to-r from-foreground to-foreground/90 text-background hover:from-foreground/90 hover:to-foreground text-lg md:text-xl px-12 md:px-16 py-4 md:py-6 rounded-full font-bold transition-all duration-500 hover:scale-110 hover:shadow-2xl transform animate-bounce shadow-lg hover:shadow-foreground/20"
+            className="bg-foreground text-background hover:bg-foreground/90 text-lg md:text-xl px-8 md:px-12 py-3 md:py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
           >
-            🚀 Join the Movement
+            Join the Movement
           </Button>
         </div>
       </section>
 
-      {/* Enhanced Scrolling Company Banner */}
-      <section className="w-full py-8 bg-gradient-to-r from-muted/20 via-muted/40 to-muted/20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent animate-pulse"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="w-full max-w-6xl mx-auto overflow-hidden py-8">
-            <div className="flex animate-scroll whitespace-nowrap hover:animation-pause">
+      {/* Scrolling Company Banner */}
+      <section className="w-full py-6 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <div className="w-full max-w-6xl mx-auto overflow-hidden py-6">
+            <div className="flex animate-scroll whitespace-nowrap">
               {/* First set of companies */}
               {companies.map((company, index) => (
-                <div key={`first-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-foreground transform hover:scale-110 transition-all duration-300 hover:text-primary">
+                <div key={`first-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-foreground">
                   <img 
                     src={company.logo} 
                     alt={`${company.name} logo`}
-                    className="h-8 w-auto mr-3 object-contain filter hover:brightness-110 transition-all duration-300 drop-shadow-md"
+                    className="h-8 w-auto mr-3 object-contain"
                   />
-                  <span className="mx-1 text-muted-foreground">:</span>
-                  <span className="text-primary font-bold ml-2 text-xs animate-pulse">{company.count}</span>
-                  {index < companies.length - 1 && <span className="mx-6 text-muted-foreground opacity-50">•</span>}
+                  <span className="mx-1">:</span>
+                  <span className="text-primary font-bold ml-2 text-sm">{company.count}</span>
+                  {index < companies.length - 1 && <span className="mx-6 text-muted-foreground">•</span>}
                 </div>
               ))}
               
               {/* Duplicate set for seamless scrolling */}
               {companies.map((company, index) => (
-                <div key={`second-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-foreground transform hover:scale-110 transition-all duration-300 hover:text-primary">
+                <div key={`second-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-foreground">
                   <img 
                     src={company.logo} 
                     alt={`${company.name} logo`}
-                    className="h-8 w-auto mr-3 object-contain filter hover:brightness-110 transition-all duration-300 drop-shadow-md"
+                    className="h-8 w-auto mr-3 object-contain"
                   />
-                  <span className="mx-1 text-muted-foreground">:</span>
-                  <span className="text-primary font-bold ml-2 text-xs animate-pulse">{company.count}</span>
-                  {index < companies.length - 1 && <span className="mx-6 text-muted-foreground opacity-50">•</span>}
+                  <span className="mx-1">:</span>
+                  <span className="text-primary font-bold ml-2 text-sm">{company.count}</span>
+                  {index < companies.length - 1 && <span className="mx-6 text-muted-foreground">•</span>}
                 </div>
               ))}
             </div>
@@ -135,94 +132,83 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Live Total Counter */}
-      <section className="w-full py-12 bg-gradient-to-r from-background to-muted/20 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent animate-pulse"></div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <p className="text-muted-foreground text-sm md:text-base mb-2 animate-fade-in">
-            Total supporters worldwide: 
+      {/* Live Total Counter */}
+      <section className="w-full py-8 bg-background">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-muted-foreground text-sm md:text-base">
+            Total supporters: 
+            <span className="font-bold text-foreground ml-2 text-lg">{Math.floor(displayCount).toLocaleString()}</span>
           </p>
-          <div className="relative inline-block">
-            <span className="font-bold text-foreground text-3xl md:text-4xl bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent animate-pulse drop-shadow-lg">
-              {Math.floor(displayCount).toLocaleString()}
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent blur-xl animate-pulse"></div>
-          </div>
         </div>
       </section>
 
-      {/* Enhanced Protest Gallery */}
-      <section className="w-full py-20 bg-gradient-to-br from-muted/30 to-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent animate-pulse"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold text-center text-foreground mb-12 animate-fade-in transform hover:scale-105 transition-all duration-500">
-            ⚡ The Movement in Action
+      {/* Protest Gallery */}
+      <section className="w-full py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-8">
+            The Movement in Action
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {protestImages.map((image, index) => (
               <div 
                 key={index} 
-                className="group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-110 hover:-rotate-1 animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="group overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
               >
                 <img 
                   src={image.src} 
                   alt={image.alt}
-                  className="w-full h-32 md:h-40 object-cover group-hover:brightness-110 group-hover:contrast-110 transition-all duration-500 filter drop-shadow-lg"
+                  className="w-full h-32 md:h-40 object-cover group-hover:brightness-110 transition-all duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Enhanced Why Section - Partially Visible */}
-      <section className="w-full py-24 bg-gradient-to-b from-background via-muted/20 to-muted/40 min-h-[70vh] relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent animate-pulse"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-12 animate-fade-in transform hover:scale-105 transition-all duration-500">
-              💪 Why Ban Chairs?
+      {/* Why Section - Partially Visible */}
+      <section className="w-full py-20 bg-gradient-to-b from-background to-muted/50 min-h-[60vh]">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
+              Why Ban Chairs?
             </h2>
-            <div className="space-y-8 text-lg md:text-xl text-muted-foreground animate-fade-in">
-              <p className="transform hover:scale-105 transition-all duration-300 p-6 rounded-xl bg-gradient-to-r from-background/50 to-muted/30 backdrop-blur-sm shadow-lg">
+            <div className="space-y-6 text-lg text-muted-foreground">
+              <p>
                 Sitting is the new smoking. Studies show that prolonged sitting increases the risk of 
-                cardiovascular disease, diabetes, and premature death by up to <span className="text-primary font-bold">40%</span>.
+                cardiovascular disease, diabetes, and premature death by up to 40%.
               </p>
-              <p className="transform hover:scale-105 transition-all duration-300 p-6 rounded-xl bg-gradient-to-r from-muted/30 to-background/50 backdrop-blur-sm shadow-lg">
+              <p>
                 Standing desks improve posture, boost energy levels, and increase productivity by 
-                <span className="text-primary font-bold"> 23%</span> on average. Join thousands who have already made the switch.
+                23% on average. Join thousands who have already made the switch.
               </p>
-              <p className="transform hover:scale-105 transition-all duration-300 p-6 rounded-xl bg-gradient-to-r from-background/50 to-muted/30 backdrop-blur-sm shadow-lg">
+              <p>
                 Our bodies were designed to move, not to be confined to chairs for 8+ hours a day. 
                 It's time to stand up for our health, literally.
               </p>
             </div>
-            <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div className="space-y-4 p-6 rounded-xl bg-gradient-to-br from-primary/10 to-transparent backdrop-blur-sm transform hover:scale-110 transition-all duration-500 shadow-lg">
-                <div className="text-4xl md:text-5xl font-bold text-primary animate-pulse">40%</div>
-                <div className="text-sm md:text-base text-muted-foreground font-medium">Reduced disease risk</div>
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div className="space-y-2">
+                <div className="text-3xl font-bold text-primary">40%</div>
+                <div className="text-sm text-muted-foreground">Reduced disease risk</div>
               </div>
-              <div className="space-y-4 p-6 rounded-xl bg-gradient-to-br from-primary/10 to-transparent backdrop-blur-sm transform hover:scale-110 transition-all duration-500 shadow-lg">
-                <div className="text-4xl md:text-5xl font-bold text-primary animate-pulse">23%</div>
-                <div className="text-sm md:text-base text-muted-foreground font-medium">Productivity increase</div>
+              <div className="space-y-2">
+                <div className="text-3xl font-bold text-primary">23%</div>
+                <div className="text-sm text-muted-foreground">Productivity increase</div>
               </div>
-              <div className="space-y-4 p-6 rounded-xl bg-gradient-to-br from-primary/10 to-transparent backdrop-blur-sm transform hover:scale-110 transition-all duration-500 shadow-lg">
-                <div className="text-4xl md:text-5xl font-bold text-primary animate-pulse">8+</div>
-                <div className="text-sm md:text-base text-muted-foreground font-medium">Hours we sit daily</div>
+              <div className="space-y-2">
+                <div className="text-3xl font-bold text-primary">8+</div>
+                <div className="text-sm text-muted-foreground">Hours we sit daily</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Enhanced Footer */}
-      <footer className="w-full py-8 border-t border-border bg-gradient-to-r from-background to-muted/20 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent animate-pulse"></div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <p className="text-muted-foreground text-sm md:text-base transform hover:scale-105 transition-all duration-300">
-            Together we stand, literally. 💪
+      {/* Footer */}
+      <footer className="w-full py-6 border-t border-border bg-background">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-muted-foreground text-sm">
+            Together we stand, literally.
           </p>
         </div>
       </footer>
