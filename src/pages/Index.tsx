@@ -1,44 +1,48 @@
-
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-
 const Index = () => {
   const [totalCount, setTotalCount] = useState(12231);
   const [displayCount, setDisplayCount] = useState(12231);
-  
-  const companies = [
-    { name: "Google", count: 221, logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png" },
-    { name: "Palantir", count: 3, logo: "https://upload.wikimedia.org/wikipedia/commons/3/37/Palantir_company_logo.png" },
-    { name: "Lockheed Martin", count: 73, logo: "https://upload.wikimedia.org/wikipedia/commons/9/99/Lockheed_Martin_logo.svg" },
-    { name: "White House", count: 18, logo: "https://upload.wikimedia.org/wikipedia/commons/2/26/WhiteHouse_Logo.png" },
-    { name: "Salesforce", count: 382, logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/320px-Salesforce.com_logo.svg.png" }
-  ];
-
-  const protestImages = [
-    {
-      src: "SohanSunku/movement-banner-scroll/src/pages/images/IMG_1018.jpg",
-      alt: "Starbucks"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=400&h=300&fit=crop",
-      alt: "Anti-chair demonstration"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=400&h=300&fit=crop",
-      alt: "Stand up movement"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop",
-      alt: "Health awareness protest"
-    }
-  ];
+  const companies = [{
+    name: "Google",
+    count: 221,
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png"
+  }, {
+    name: "Palantir",
+    count: 3,
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/37/Palantir_company_logo.png"
+  }, {
+    name: "Lockheed Martin",
+    count: 73,
+    logo: "https://upload.wikimedia.org/wikipedia/commons/9/99/Lockheed_Martin_logo.svg"
+  }, {
+    name: "White House",
+    count: 18,
+    logo: "https://upload.wikimedia.org/wikipedia/commons/2/26/WhiteHouse_Logo.png"
+  }, {
+    name: "Salesforce",
+    count: 382,
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/320px-Salesforce.com_logo.svg.png"
+  }];
+  const protestImages = [{
+    src: "SohanSunku/movement-banner-scroll/src/pages/images/IMG_1018.jpg",
+    alt: "Starbucks"
+  }, {
+    src: "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=400&h=300&fit=crop",
+    alt: "Anti-chair demonstration"
+  }, {
+    src: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=400&h=300&fit=crop",
+    alt: "Stand up movement"
+  }, {
+    src: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop",
+    alt: "Health awareness protest"
+  }];
 
   // Constantly updating counter
   useEffect(() => {
     const interval = setInterval(() => {
       setTotalCount(prev => prev + Math.floor(Math.random() * 3) + 1);
     }, 3000);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -47,7 +51,6 @@ const Index = () => {
     const duration = 1000; // 1 second animation
     const steps = 60; // 60 fps
     const increment = (totalCount - displayCount) / steps;
-    
     if (Math.abs(totalCount - displayCount) > 0.1) {
       const timer = setInterval(() => {
         setDisplayCount(prev => {
@@ -59,18 +62,14 @@ const Index = () => {
           return next;
         });
       }, duration / steps);
-
       return () => clearInterval(timer);
     }
   }, [totalCount, displayCount]);
-
   const handleJoinMovement = () => {
     console.log("User clicked to join the movement!");
     // This would typically redirect to a signup form or modal
   };
-
-  return (
-    <div className="min-h-screen bg-background flex flex-col">
+  return <div className="min-h-screen bg-background flex flex-col">
       {/* Header Banner */}
       <header className="w-full bg-background border-b border-border">
         <div className="container mx-auto px-4 py-8 text-center">
@@ -86,10 +85,7 @@ const Index = () => {
       {/* Join Movement Button */}
       <section className="w-full py-8 bg-background">
         <div className="container mx-auto px-4 text-center">
-          <Button 
-            onClick={handleJoinMovement}
-            className="bg-foreground text-background hover:bg-foreground/90 text-lg md:text-xl px-8 md:px-12 py-3 md:py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
-          >
+          <Button onClick={handleJoinMovement} className="bg-foreground text-background hover:bg-foreground/90 text-lg md:text-xl px-8 md:px-12 py-3 md:py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
             Join the Movement
           </Button>
         </div>
@@ -101,32 +97,20 @@ const Index = () => {
           <div className="w-full max-w-6xl mx-auto overflow-hidden py-6">
             <div className="flex animate-scroll whitespace-nowrap">
               {/* First set of companies */}
-              {companies.map((company, index) => (
-                <div key={`first-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-foreground">
-                  <img 
-                    src={company.logo} 
-                    alt={`${company.name} logo`}
-                    className="h-8 w-auto mr-3 object-contain"
-                  />
+              {companies.map((company, index) => <div key={`first-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-foreground">
+                  <img src={company.logo} alt={`${company.name} logo`} className="h-8 w-auto mr-3 object-contain" />
                   <span className="mx-1">:</span>
                   <span className="text-primary font-bold ml-2 text-sm">{company.count}</span>
-                  {index < companies.length - 1 && <span className="mx-6 text-muted-foreground">•</span>}
-                </div>
-              ))}
+                  {index < companies.length - 1 && <span className="mx-6 text-muted-foreground"></span>}
+                </div>)}
               
               {/* Duplicate set for seamless scrolling */}
-              {companies.map((company, index) => (
-                <div key={`second-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-foreground">
-                  <img 
-                    src={company.logo} 
-                    alt={`${company.name} logo`}
-                    className="h-8 w-auto mr-3 object-contain"
-                  />
+              {companies.map((company, index) => <div key={`second-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-foreground">
+                  <img src={company.logo} alt={`${company.name} logo`} className="h-8 w-auto mr-3 object-contain" />
                   <span className="mx-1">:</span>
                   <span className="text-primary font-bold ml-2 text-sm">{company.count}</span>
                   {index < companies.length - 1 && <span className="mx-6 text-muted-foreground">•</span>}
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -149,18 +133,9 @@ const Index = () => {
             The Movement in Action
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            {protestImages.map((image, index) => (
-              <div 
-                key={index} 
-                className="group overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-              >
-                <img 
-                  src={image.src} 
-                  alt={image.alt}
-                  className="w-full h-32 md:h-40 object-cover group-hover:brightness-110 transition-all duration-300"
-                />
-              </div>
-            ))}
+            {protestImages.map((image, index) => <div key={index} className="group overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                <img src={image.src} alt={image.alt} className="w-full h-32 md:h-40 object-cover group-hover:brightness-110 transition-all duration-300" />
+              </div>)}
           </div>
         </div>
       </section>
@@ -212,8 +187,6 @@ const Index = () => {
           </p>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
