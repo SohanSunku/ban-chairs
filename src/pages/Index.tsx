@@ -208,14 +208,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="w-full py-6 border-t border-border bg-background">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-muted-foreground text-sm">
-            Together we stand, literally.
-          </p>
-        </div>
-      </footer>
+
+      
     </div>;
 };
 export default Index;
