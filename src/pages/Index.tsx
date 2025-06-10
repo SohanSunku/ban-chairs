@@ -68,12 +68,10 @@ const Index = () => {
       return () => clearInterval(timer);
     }
   }, [totalCount, displayCount]);
-  
   const handleJoinMovement = () => {
     console.log("User clicked to join the movement!");
     // This would typically redirect to a signup form or modal
   };
-  
   return <div className="min-h-screen bg-background flex flex-col">
       {/* Header Banner */}
       
@@ -105,7 +103,7 @@ const Index = () => {
       {/* Scrolling Company Banner - Updated with larger logos */}
       <section className="w-full bg-transparent py-0">
         <div className="container mx-auto px-4">
-          <div className="w-full max-w-6xl mx-auto overflow-hidden py-6">
+          <div className="w-full max-w-6xl mx-auto overflow-hidden py-[60px]">
             <div className="flex animate-scroll whitespace-nowrap">
               {/* First set of companies */}
               {companies.map((company, index) => <div key={`first-${index}`} className="inline-flex items-center mx-12 text-2xl md:text-3xl font-medium text-foreground">
@@ -136,17 +134,11 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <Carousel className="w-full">
               <CarouselContent>
-                {protestImages.map((image, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                {protestImages.map((image, index) => <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                     <div className="group overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                      <img 
-                        src={image.src} 
-                        alt={image.alt} 
-                        className="w-full h-48 md:h-56 object-cover group-hover:brightness-110 transition-all duration-300" 
-                      />
+                      <img src={image.src} alt={image.alt} className="w-full h-48 md:h-56 object-cover group-hover:brightness-110 transition-all duration-300" />
                     </div>
-                  </CarouselItem>
-                ))}
+                  </CarouselItem>)}
               </CarouselContent>
               <CarouselPrevious />
               <CarouselNext />
