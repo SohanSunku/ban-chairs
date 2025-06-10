@@ -204,6 +204,10 @@ const Index = () => {
               These are abundantly common issues that we have come to accept as the cost of aging. Except, even college students are facing these issues at alarmingly high rates.
               Our solutions suck. Vague references to your "core" or misinformation about "posture". Physical therapists and Chiropractors we pay too much for. Multibillion dollar industries have evolved around the fact of chronic pain, whether that's standing desk cos or opiod peddling pharma companies.
             </p>
+
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              90% of Americans experience back pain, for 60% it becoms chronic. An ache between your shoulder blades, low back pain, a tight neck. Doctors blame a "weak core", chiropractors see us every couple weeks, and we're sold a plethora of nonsense products. The medical industry has failed us. What's the root cause? We talked to the experts and found out.
+            </p>
           </div>
         </div>
       </section>
