@@ -5,7 +5,6 @@ import Autoplay from "embla-carousel-autoplay";
 import starbucksImage from "./images/IMG_1018.jpg";
 import cops from "./images/cops.png"; // Fixed: changed from cop.png to cops.png
 import rfk from "./images/rfk.jpg";
-
 const Index = () => {
   const [totalCount, setTotalCount] = useState(12231);
   const [displayCount, setDisplayCount] = useState(12231);
@@ -137,7 +136,7 @@ const Index = () => {
               {companies.map((company, index) => <div key={`first-${index}`} className="inline-flex items-center mx-12 text-2xl md:text-3xl font-medium text-foreground">
                   <img src={company.logo} alt={`${company.name} logo`} className="h-16 md:h-20 w-auto mr-4 object-contain" />
                   <span className="mx-2">:</span>
-                  <span className="text-primary font-bold ml-3 text-lg md:text-xl">{company.count}</span>
+                  <span className="text-primary font-bold ml-3 text-lg md:text-xl mx-0 px-0">{company.count}</span>
                   {index < companies.length - 1 && <span className="mx-8 text-muted-foreground"></span>}
                 </div>)}
               
@@ -167,19 +166,14 @@ const Index = () => {
       <section className="w-full py-4 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto relative">
-            <Carousel
-              plugins={[
-                Autoplay({
-                  delay: 3000,
-                  stopOnInteraction: false,
-                  stopOnMouseEnter: false,
-                }),
-              ]}
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-            >
+            <Carousel plugins={[Autoplay({
+            delay: 3000,
+            stopOnInteraction: false,
+            stopOnMouseEnter: false
+          })]} opts={{
+            align: "start",
+            loop: true
+          }}>
               <CarouselContent>
                 {pressArticles.map((article, index) => <CarouselItem key={index}>
                     <div className="bg-card rounded-lg shadow-lg overflow-hidden mx-2">
