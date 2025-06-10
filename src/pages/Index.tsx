@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import starbucksImage from "./images/IMG_1018.jpg";
-import cops from "./images/cop.png"; //is this working?
+import cops from "./images/cops.png"; // Fixed: changed from cop.png to cops.png
 const Index = () => {
   const [totalCount, setTotalCount] = useState(12231);
   const [displayCount, setDisplayCount] = useState(12231);
