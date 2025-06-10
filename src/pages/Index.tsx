@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import starbucksImage from "./images/IMG_1018.jpg";
-
 const Index = () => {
   const [totalCount, setTotalCount] = useState(12231);
   const [displayCount, setDisplayCount] = useState(12231);
@@ -105,7 +104,7 @@ const Index = () => {
       </section>
 
       {/* Scrolling Company Banner */}
-      <section className="w-full py-6 bg-transparent">
+      <section className="w-full bg-transparent py-0">
         <div className="container mx-auto px-4">
           <div className="w-full max-w-6xl mx-auto overflow-hidden py-6">
             <div className="flex animate-scroll whitespace-nowrap">
