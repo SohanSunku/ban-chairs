@@ -178,7 +178,11 @@ const Index = () => {
                 {pressArticles.map((article, index) => <CarouselItem key={index}>
                     <div className="bg-card rounded-lg shadow-lg overflow-hidden mx-2">
                       <div className="overflow-hidden">
-                        <img src={article.image} alt={article.title} className="w-full h-32 object-cover" />
+                        <img 
+                          src={article.image} 
+                          alt={article.title} 
+                          className={`w-full h-32 ${article.image === cops ? 'object-cover object-top' : 'object-cover'}`}
+                        />
                       </div>
                       <div className="p-4">
                         <div className="flex items-center justify-between text-sm text-muted-foreground mb-2">
