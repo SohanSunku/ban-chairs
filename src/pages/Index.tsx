@@ -1,4 +1,5 @@
 
+
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
@@ -118,7 +119,13 @@ const Index = () => {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight relative">
               <span className="relative inline-block">
                 BAN CHAIRS
-                <div className="absolute bottom-0 left-0 w-full h-3 bg-red-500 opacity-60 transform -skew-x-12 -rotate-1"></div>
+                <div className="absolute -bottom-2 left-0 w-full h-4 bg-red-500 opacity-70 transform -skew-x-6 -rotate-1 rounded-sm" 
+                     style={{
+                       background: 'linear-gradient(45deg, #dc2626 0%, #b91c1c 25%, #dc2626 50%, #b91c1c 75%, #dc2626 100%)',
+                       filter: 'blur(0.5px) contrast(1.2)',
+                       boxShadow: 'inset 0 0 2px rgba(0,0,0,0.3)'
+                     }}>
+                </div>
               </span>
             </h1>
           </div>
@@ -239,3 +246,4 @@ const Index = () => {
     </div>;
 };
 export default Index;
+
