@@ -196,10 +196,10 @@ const Index = () => {
       <section className="w-full py-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-left">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
               Why?
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-base text-muted-foreground leading-relaxed">
               90% of Americans experience back pain, for 60% it becoms chronic. An ache between your shoulder blades, low back pain, a tight neck.
               <br></br>. 
               The issue isn't a "weak core" or lack of "xyz product". We talked to ALL the experts. The problem is we don't know how to sit, and our chairs suck. 
