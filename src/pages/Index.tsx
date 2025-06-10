@@ -91,6 +91,17 @@ const Index = () => {
         </div>
       </section>
 
+
+      {/* Live Total Counter */}
+      <section className="w-full py-8 bg-background">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-muted-foreground text-sm md:text-base">
+            Backs Saved: 
+            <span className="font-bold text-foreground ml-2 text-lg">{Math.floor(displayCount).toLocaleString()}</span>
+          </p>
+        </div>
+      </section>
+
       {/* Scrolling Company Banner */}
       <section className="w-full py-6 bg-transparent">
         <div className="container mx-auto px-4">
@@ -113,16 +124,6 @@ const Index = () => {
                 </div>)}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Live Total Counter */}
-      <section className="w-full py-8 bg-background">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-muted-foreground text-sm md:text-base">
-            Total supporters: 
-            <span className="font-bold text-foreground ml-2 text-lg">{Math.floor(displayCount).toLocaleString()}</span>
-          </p>
         </div>
       </section>
 
