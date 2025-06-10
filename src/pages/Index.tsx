@@ -72,10 +72,11 @@ const Index = () => {
       return () => clearInterval(timer);
     }
   }, [totalCount, displayCount]);
+
   const handleJoinMovement = () => {
-    console.log("User clicked to join the movement!");
-    // This would typically redirect to a signup form or modal
+    window.open('https://forms.gle/JmwKxRRM7cF5UyEZA', '_blank');
   };
+
   const pressArticles = [{
     title: "RFK Junior's MAHA Targets Sitting",
     source: "The Washington Post",
