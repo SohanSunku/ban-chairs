@@ -5,6 +5,7 @@ import Autoplay from "embla-carousel-autoplay";
 import starbucksImage from "./images/IMG_1018.jpg";
 import cops from "./images/cops.png"; // Fixed: changed from cop.png to cops.png
 import rfk from "./images/rfk.jpg";
+
 const Index = () => {
   const [totalCount, setTotalCount] = useState(12231);
   const [displayCount, setDisplayCount] = useState(12231);
@@ -155,7 +156,7 @@ const Index = () => {
       {/* Press Coverage Section */}
       <section className="w-full bg-background py-0">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-left">
+          <div className="max-w-2xl mx-auto text-left">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
               Press
             </h2>
@@ -181,7 +182,7 @@ const Index = () => {
                         <img 
                           src={article.image} 
                           alt={article.title} 
-                          className={`w-full h-32 ${article.image === cops ? 'object-cover object-top' : 'object-cover'}`}
+                          className={`w-full h-32 ${article.image === cops ? 'object-cover object-center' : 'object-cover'}`}
                         />
                       </div>
                       <div className="p-4">
@@ -209,7 +210,7 @@ const Index = () => {
       {/* Why Section */}
       <section className="w-full py-12 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-left">
+          <div className="max-w-2xl mx-auto text-left">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
               Why?
             </h2>
