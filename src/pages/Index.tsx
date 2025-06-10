@@ -155,19 +155,19 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="w-full py-12 bg-black">
+      <section className="w-full py-6 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <Carousel>
               <CarouselContent>
                 {pressArticles.map((article, index) => (
                   <CarouselItem key={index}>
-                    <div className="bg-white rounded-lg shadow-lg overflow-hidden mx-2">
+                    <div className="bg-card rounded-lg shadow-lg overflow-hidden mx-2">
                       <div className="overflow-hidden">
                         <img 
                           src={article.image} 
                           alt={article.title} 
-                          className="w-full h-64 object-cover" 
+                          className="w-full h-48 object-cover" 
                         />
                       </div>
                       <div className="p-6">
@@ -175,10 +175,10 @@ const Index = () => {
                           <span className="font-medium">{article.source}</span>
                           <span>{article.date}</span>
                         </div>
-                        <h3 className="font-bold text-xl mb-4 text-foreground leading-tight">
+                        <h3 className="font-bold text-lg mb-3 text-foreground leading-tight">
                           {article.title}
                         </h3>
-                        <p className="text-muted-foreground leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed text-sm">
                           {article.excerpt}
                         </p>
                       </div>
@@ -186,8 +186,8 @@ const Index = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="text-white border-white hover:bg-white hover:text-black" />
-              <CarouselNext className="text-white border-white hover:bg-white hover:text-black" />
+              <CarouselPrevious className="text-foreground border-border hover:bg-accent hover:text-accent-foreground" />
+              <CarouselNext className="text-foreground border-border hover:bg-accent hover:text-accent-foreground" />
             </Carousel>
           </div>
         </div>
