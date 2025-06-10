@@ -16,7 +16,7 @@ const Index = () => {
 
   const protestImages = [
     {
-      src: "src/pages/images/IMG_1018.HEIC",
+      src: "src/pages/images/IMG_1018.jpg",
       alt: "Standing workers rally"
     },
     {
