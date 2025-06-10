@@ -79,9 +79,6 @@ const Index = () => {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight">
             BAN CHAIRS
           </h1>
-          <p className="text-muted-foreground mt-2 text-sm md:text-base">
-            Standing up for a better tomorrow
-          </p>
         </div>
       </header>
 
