@@ -6,6 +6,8 @@ import starbucksImage from "./images/IMG_1018.jpg";
 import cops from "./images/cops.jpeg";
 import rfk from "./images/rfk.jpg";
 import chronicPainImage from "./images/IMG_0925.jpg";
+import waterImage from "./images/water.jpg";
+import attachmentImage from "./images/Attachment-1.jpeg";
 
 const Index = () => {
   const [totalCount, setTotalCount] = useState(12231);
@@ -96,7 +98,7 @@ const Index = () => {
     title: "Herman Miller Refuses to Teach Proper Sitting",
     source: "Business Insider",
     date: "Dec 28, 2024",
-    image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop",
+    image: waterImage,
     excerpt: "Furniture giant faces backlash after internal memo surfaces in response to chronic pain crisis 'we're NOT teaching people how to sit, we work with how they already sit'"
   }];
 
@@ -105,9 +107,16 @@ const Index = () => {
       
       <header className="w-full bg-background border-b border-border">
         <div className="container mx-auto px-4 py-8 text-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight">
-            BAN CHAIRS
-          </h1>
+          <div className="flex items-center justify-center gap-4">
+            <img 
+              src={attachmentImage} 
+              alt="Ban Chairs Logo" 
+              className="h-12 md:h-16 w-auto object-contain"
+            />
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight">
+              BAN CHAIRS
+            </h1>
+          </div>
         </div>
       </header>
 
