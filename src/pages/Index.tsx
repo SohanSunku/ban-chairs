@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
@@ -244,6 +243,17 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="w-full py-8 bg-background border-t border-border mt-auto">
+        <div className="container mx-auto px-4 text-center">
+          <div className="text-muted-foreground">
+            <p className="text-sm md:text-base">
+              Contact: <a href="mailto:sohan.sunku1@gmail.com" className="text-foreground hover:text-primary transition-colors">sohan.sunku1@gmail.com</a>
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>;
 };
 export default Index;
