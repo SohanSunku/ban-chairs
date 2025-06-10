@@ -86,7 +86,7 @@ const Index = () => {
     image: rfk,
     excerpt: "Sitting is the new smoking, echoes RFK Junior during White House address. Gen Z protestors in San Francisco Agree."
   }, {
-    title: "Public Outrage After SFPD Officer Laughs at Protesters",
+    title: "Public Outrage After SFPD Officer Laughs at Protestor",
     source: "San Francisco Chronicle",
     date: "Jun 5, 2025",
     image: cops,
