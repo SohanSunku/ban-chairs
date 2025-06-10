@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import starbucksImage from "./images/IMG_1018.jpg";
 import cops from "./images/cops.png";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-
 const Index = () => {
   const [totalCount, setTotalCount] = useState(12231);
   const [displayCount, setDisplayCount] = useState(12231);
@@ -60,40 +59,32 @@ const Index = () => {
     console.log("User clicked to join the movement!");
     // This would typically redirect to a signup form or modal
   };
-
-  const pressArticles = [
-    {
-      title: "Major Coffee Chain Removes All Seating After Employee Health Study",
-      source: "San Francisco Chronicle",
-      date: "Dec 8, 2024",
-      image: starbucksImage,
-      excerpt: "Following a comprehensive study showing 73% reduction in back pain complaints, the popular coffee chain announced the removal of all chairs from their locations."
-    },
-    {
-      title: "Law Enforcement Agencies Adopt Standing-Only Policies",
-      source: "The Washington Post",
-      date: "Dec 5, 2024", 
-      image: cops,
-      excerpt: "Police departments across the nation report improved alertness and reduced fatigue after implementing standing desk policies in their offices."
-    },
-    {
-      title: "Standing Movement Gains Momentum in Corporate America",
-      source: "The New York Times",
-      date: "Dec 3, 2024",
-      image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=400&h=300&fit=crop",
-      excerpt: "Fortune 500 companies are investing millions in ergonomic standing solutions as the anti-chair movement reshapes workplace culture."
-    },
-    {
-      title: "Medical Community Endorses Chair-Free Workspaces",
-      source: "USA Today",
-      date: "Nov 30, 2024",
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop",
-      excerpt: "Leading healthcare professionals cite overwhelming evidence supporting the elimination of prolonged sitting in professional environments."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background flex flex-col">
+  const pressArticles = [{
+    title: "Major Coffee Chain Removes All Seating After Employee Health Study",
+    source: "San Francisco Chronicle",
+    date: "Dec 8, 2024",
+    image: starbucksImage,
+    excerpt: "Following a comprehensive study showing 73% reduction in back pain complaints, the popular coffee chain announced the removal of all chairs from their locations."
+  }, {
+    title: "Law Enforcement Agencies Adopt Standing-Only Policies",
+    source: "The Washington Post",
+    date: "Dec 5, 2024",
+    image: cops,
+    excerpt: "Police departments across the nation report improved alertness and reduced fatigue after implementing standing desk policies in their offices."
+  }, {
+    title: "Standing Movement Gains Momentum in Corporate America",
+    source: "The New York Times",
+    date: "Dec 3, 2024",
+    image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=400&h=300&fit=crop",
+    excerpt: "Fortune 500 companies are investing millions in ergonomic standing solutions as the anti-chair movement reshapes workplace culture."
+  }, {
+    title: "Medical Community Endorses Chair-Free Workspaces",
+    source: "USA Today",
+    date: "Nov 30, 2024",
+    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop",
+    excerpt: "Leading healthcare professionals cite overwhelming evidence supporting the elimination of prolonged sitting in professional environments."
+  }];
+  return <div className="min-h-screen bg-background flex flex-col">
       {/* Header Banner */}
       
       <header className="w-full bg-background border-b border-border">
@@ -147,9 +138,9 @@ const Index = () => {
       </section>
 
       {/* Press Coverage Section */}
-      <section className="w-full py-8 bg-background">
+      <section className="w-full bg-background py-0">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-left text-foreground mb-6">
+          <h2 className="md:text-4xl font-bold text-left text-foreground mb-6 text-xl">
             In the Press
           </h2>
         </div>
@@ -160,15 +151,10 @@ const Index = () => {
           <div className="max-w-2xl mx-auto">
             <Carousel>
               <CarouselContent>
-                {pressArticles.map((article, index) => (
-                  <CarouselItem key={index}>
+                {pressArticles.map((article, index) => <CarouselItem key={index}>
                     <div className="bg-card rounded-lg shadow-lg overflow-hidden mx-2">
                       <div className="overflow-hidden">
-                        <img 
-                          src={article.image} 
-                          alt={article.title} 
-                          className="w-full h-48 object-cover" 
-                        />
+                        <img src={article.image} alt={article.title} className="w-full h-48 object-cover" />
                       </div>
                       <div className="p-6">
                         <div className="flex items-center justify-between text-sm text-muted-foreground mb-3">
@@ -183,8 +169,7 @@ const Index = () => {
                         </p>
                       </div>
                     </div>
-                  </CarouselItem>
-                ))}
+                  </CarouselItem>)}
               </CarouselContent>
               <CarouselPrevious className="text-foreground border-border hover:bg-accent hover:text-accent-foreground" />
               <CarouselNext className="text-foreground border-border hover:bg-accent hover:text-accent-foreground" />
@@ -219,8 +204,6 @@ const Index = () => {
           </p>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
