@@ -181,7 +181,7 @@ const Index = () => {
       {/* Why Section */}
       <section className="w-full py-12 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto text-left">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
               Why?
             </h2>
