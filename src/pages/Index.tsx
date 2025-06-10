@@ -1,11 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-import talking from "./images/talking.PNG";
-import street from "./images/embarcadero.jpg";
-import cops from "./images/cops.jpg";
 import starbucksImage from "./images/IMG_1018.jpg";
-
-
 const Index = () => {
   const [totalCount, setTotalCount] = useState(12231);
   const [displayCount, setDisplayCount] = useState(12231);
@@ -31,14 +26,14 @@ const Index = () => {
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/320px-Salesforce.com_logo.svg.png"
   }];
   const protestImages = [{
-    src: talking,
-    alt: "talking"
+    src: starbucksImage,
+    alt: "Starbucks"
   }, {
-    src: street,
-    alt: "street"
+    src: "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=400&h=300&fit=crop",
+    alt: "Anti-chair demonstration"
   }, {
-    src: cops,
-    alt: "cops"
+    src: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=400&h=300&fit=crop",
+    alt: "Stand up movement"
   }, {
     src: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop",
     alt: "Health awareness protest"
@@ -111,7 +106,7 @@ const Index = () => {
       {/* Scrolling Company Banner */}
       <section className="w-full py-6 bg-transparent">
         <div className="container mx-auto px-4">
-          <div className="w-full max-w-6xl mx-auto overflow-hidden py-6">
+          <div className="w-full max-w-6xl mx-auto overflow-hidden py-0">
             <div className="flex animate-scroll whitespace-nowrap">
               {/* First set of companies */}
               {companies.map((company, index) => <div key={`first-${index}`} className="inline-flex items-center mx-8 text-lg md:text-xl font-medium text-foreground">
