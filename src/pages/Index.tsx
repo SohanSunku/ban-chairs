@@ -16,7 +16,7 @@ const Index = () => {
 
   const protestImages = [
     {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/320px-Salesforce.com_logo.svg.png",
+      src: "src/pages/images/IMG_1018.HEIC",
       alt: "Standing workers rally"
     },
     {
