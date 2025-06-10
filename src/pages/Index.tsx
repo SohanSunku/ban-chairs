@@ -146,7 +146,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="w-full py-6 bg-background">
+      <section className="w-full py-4 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <Carousel>
@@ -154,14 +154,14 @@ const Index = () => {
                 {pressArticles.map((article, index) => <CarouselItem key={index}>
                     <div className="bg-card rounded-lg shadow-lg overflow-hidden mx-2">
                       <div className="overflow-hidden">
-                        <img src={article.image} alt={article.title} className="w-full h-48 object-cover" />
+                        <img src={article.image} alt={article.title} className="w-full h-32 object-cover" />
                       </div>
-                      <div className="p-6">
-                        <div className="flex items-center justify-between text-sm text-muted-foreground mb-3">
+                      <div className="p-4">
+                        <div className="flex items-center justify-between text-sm text-muted-foreground mb-2">
                           <span className="font-medium">{article.source}</span>
                           <span>{article.date}</span>
                         </div>
-                        <h3 className="font-bold text-lg mb-3 text-foreground leading-tight">
+                        <h3 className="font-bold text-base mb-2 text-foreground leading-tight">
                           {article.title}
                         </h3>
                         <p className="text-muted-foreground leading-relaxed text-sm">
