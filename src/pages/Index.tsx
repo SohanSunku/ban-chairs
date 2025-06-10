@@ -30,7 +30,7 @@ const Index = () => {
     src: starbucksImage,
     alt: "Starbucks"
   }, {
-    src: cops
+    src: cops,
     alt: "cops"
   }, {
     src: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=400&h=300&fit=crop",
