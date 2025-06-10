@@ -63,16 +63,16 @@ const Index = () => {
   };
   const pressArticles = [{
     title: "RFK Junior's MAHA Targets Sitting",
-    source: "Washington Post",
+    source: "The Washington Post",
     date: "May 8, 2025",
     image: starbucksImage,
     excerpt: "Sitting is the new smoking, echoes RFK Junior during White House address. Gen Z protestors in San Francisco Agree."
   }, {
-    title: "Law Enforcement Agencies Adopt Standing-Only Policies",
-    source: "The Washington Post",
-    date: "Dec 5, 2024",
+    title: "Public Outrage After SFPD Officer Laughs at Protesters",
+    source: "San Francisco Chronicle",
+    date: "Jun 5, 2025",
     image: cops,
-    excerpt: "Police departments across the nation report improved alertness and reduced fatigue after implementing standing desk policies in their offices."
+    excerpt: "Man protesting chairs reportedly walked up to officers and asked to be arrested. Two kind officers declined and supportes his right to protest."
   }, {
     title: "Standing Movement Gains Momentum in Corporate America",
     source: "The New York Times",
