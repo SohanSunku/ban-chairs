@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
@@ -106,7 +105,7 @@ const Index = () => {
       
       <header className="w-full bg-background border-b border-border">
         <div className="container mx-auto px-4 py-8 text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight">
             BAN CHAIRS
           </h1>
         </div>
