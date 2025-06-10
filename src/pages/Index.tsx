@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import starbucksImage from "./images/IMG_1018.jpg";
-import cops from "./images/cops.jpeg"; // Fixed: changed from cops.png to cops.jpeg
+import cops from "./images/cops.jpeg";
 import rfk from "./images/rfk.jpg";
 
 const Index = () => {
@@ -44,7 +44,6 @@ const Index = () => {
     alt: "Health awareness protest"
   }];
 
-  // Constantly updating counter
   useEffect(() => {
     const interval = setInterval(() => {
       setTotalCount(prev => prev + Math.floor(Math.random() * 3) + 1);
@@ -52,7 +51,6 @@ const Index = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Animated counter effect
   useEffect(() => {
     const duration = 1000; // 1 second animation
     const steps = 60; // 60 fps
@@ -88,18 +86,19 @@ const Index = () => {
     image: cops,
     excerpt: "Man protesting chairs reportedly walked up to officers and asked to be arrested. Officer Mustachio declined, citing first amendment right to protest."
   }, {
-    title: "Standing Movement Gains Momentum in Corporate America",
-    source: "The New York Times",
-    date: "Dec 3, 2024",
-    image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=400&h=300&fit=crop",
-    excerpt: "Fortune 500 companies are investing millions in ergonomic standing solutions as the anti-chair movement reshapes workplace culture."
+    title: "Chronic Pain Crisis Grips Corporate America",
+    source: "Forbes",
+    date: "Jan 15, 2025",
+    image: "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=400&h=300&fit=crop",
+    excerpt: "New study reveals 85% of office workers suffer from chronic back and neck pain, costing companies billions in lost productivity and healthcare expenses."
   }, {
-    title: "Medical Community Endorses Chair-Free Workspaces",
-    source: "USA Today",
-    date: "Nov 30, 2024",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop",
-    excerpt: "Leading healthcare professionals cite overwhelming evidence supporting the elimination of prolonged sitting in professional environments."
+    title: "Herman Miller Refuses to Teach Proper Sitting",
+    source: "Business Insider",
+    date: "Dec 28, 2024",
+    image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop",
+    excerpt: "Furniture giant faces backlash after CEO declares 'sitting is intuitive' and refuses to provide ergonomic training, sparking controversy among health advocates."
   }];
+
   return <div className="min-h-screen bg-background flex flex-col">
       {/* Header Banner */}
       
@@ -222,9 +221,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-
-      
     </div>;
 };
 export default Index;
