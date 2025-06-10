@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
@@ -115,45 +114,8 @@ const Index = () => {
               alt="Ban Chairs Logo" 
               className="h-12 md:h-16 w-auto object-contain"
             />
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight relative">
-              <span className="relative inline-block">
-                BAN CHAIRS
-                <svg 
-                  className="absolute -bottom-2 left-0 w-full h-8" 
-                  viewBox="0 0 300 25" 
-                  xmlns="http://www.w3.org/2000/svg"
-                  preserveAspectRatio="none"
-                >
-                  {/* Spine vertebrae */}
-                  {Array.from({length: 12}, (_, i) => (
-                    <g key={i}>
-                      <ellipse 
-                        cx={25 + i * 23} 
-                        cy="12" 
-                        rx="8" 
-                        ry="6" 
-                        fill="#dc2626" 
-                        opacity="0.9"
-                      />
-                      <ellipse 
-                        cx={25 + i * 23} 
-                        cy="12" 
-                        rx="5" 
-                        ry="3" 
-                        fill="#991b1b" 
-                      />
-                    </g>
-                  ))}
-                  {/* Connecting spinal cord */}
-                  <path 
-                    d="M25,12 Q80,10 150,12 T275,12" 
-                    stroke="#7f1d1d" 
-                    strokeWidth="2" 
-                    fill="none" 
-                    opacity="0.8"
-                  />
-                </svg>
-              </span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight">
+              BAN CHAIRS
             </h1>
           </div>
         </div>
