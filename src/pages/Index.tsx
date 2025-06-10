@@ -147,11 +147,16 @@ const Index = () => {
       </section>
 
       {/* Press Coverage Section */}
-      <section className="w-full py-16 bg-black">
+      <section className="w-full py-8 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-left text-foreground mb-6">
             In the Press
           </h2>
+        </div>
+      </section>
+
+      <section className="w-full py-12 bg-black">
+        <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <Carousel>
               <CarouselContent>
@@ -189,7 +194,7 @@ const Index = () => {
       </section>
 
       {/* Why Section */}
-      <section className="w-full py-20 bg-gradient-to-b from-background to-muted/50">
+      <section className="w-full py-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
