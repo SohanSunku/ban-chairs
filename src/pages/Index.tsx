@@ -150,13 +150,13 @@ const Index = () => {
 
       <section className="w-full py-4 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-2xl mx-auto relative">
             <Carousel
               plugins={[
                 Autoplay({
-                  delay: 4000,
-                  stopOnInteraction: true,
-                  stopOnMouseEnter: true,
+                  delay: 3000,
+                  stopOnInteraction: false,
+                  stopOnMouseEnter: false,
                 }),
               ]}
               opts={{
@@ -185,8 +185,8 @@ const Index = () => {
                     </div>
                   </CarouselItem>)}
               </CarouselContent>
-              <CarouselPrevious className="text-foreground border-border hover:bg-accent hover:text-accent-foreground" />
-              <CarouselNext className="text-foreground border-border hover:bg-accent hover:text-accent-foreground" />
+              <CarouselPrevious className="left-2 md:-left-12 text-foreground border-border hover:bg-accent hover:text-accent-foreground" />
+              <CarouselNext className="right-2 md:-right-12 text-foreground border-border hover:bg-accent hover:text-accent-foreground" />
             </Carousel>
           </div>
         </div>
