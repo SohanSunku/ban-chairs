@@ -8,7 +8,6 @@ import rfk from "./images/rfk.jpg";
 import chronicPainImage from "./images/IMG_0925.jpg";
 import waterImage from "./images/water.jpg";
 import attachmentImage from "./images/Attachment-1.jpeg";
-
 const Index = () => {
   const [totalCount, setTotalCount] = useState(12231);
   const [displayCount, setDisplayCount] = useState(12231);
@@ -46,14 +45,12 @@ const Index = () => {
     src: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop",
     alt: "Health awareness protest"
   }];
-
   useEffect(() => {
     const interval = setInterval(() => {
       setTotalCount(prev => prev + Math.floor(Math.random() * 3) + 1);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
-
   useEffect(() => {
     const duration = 1000; // 1 second animation
     const steps = 60; // 60 fps
@@ -72,11 +69,9 @@ const Index = () => {
       return () => clearInterval(timer);
     }
   }, [totalCount, displayCount]);
-
   const handleJoinMovement = () => {
     window.open('https://forms.gle/JmwKxRRM7cF5UyEZA', '_blank');
   };
-
   const pressArticles = [{
     title: "RFK Junior's MAHA Targets Sitting",
     source: "The Washington Post",
@@ -102,30 +97,22 @@ const Index = () => {
     image: waterImage,
     excerpt: "Furniture giant faces backlash after internal memo surfaces in response to chronic pain crisis 'we're NOT teaching people how to sit, we work with how they already sit'"
   }];
-
   return <div className="min-h-screen bg-background flex flex-col">
       {/* Header Banner */}
       
       <header className="w-full bg-background border-b border-border">
         <div className="container mx-auto px-4 py-8 text-center">
           <div className="flex items-center justify-center gap-4">
-            <img 
-              src={attachmentImage} 
-              alt="Ban Chairs Logo" 
-              className="h-12 md:h-16 w-auto object-contain"
-            />
+            <img src={attachmentImage} alt="Ban Chairs Logo" className="h-12 md:h-16 w-auto object-contain" />
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight relative">
               <span className="relative inline-block">
                 BAN CHAIRS
-                <div 
-                  className="absolute -bottom-1 left-0 w-full h-2 bg-red-600 opacity-80"
-                  style={{
-                    background: 'linear-gradient(90deg, #dc2626 0%, #b91c1c 30%, #dc2626 60%, #b91c1c 100%)',
-                    filter: 'blur(0.5px)',
-                    borderRadius: '2px',
-                    transform: 'rotate(-0.5deg)'
-                  }}
-                />
+                <div className="absolute -bottom-1 left-0 w-full h-2 bg-red-600 opacity-80" style={{
+                background: 'linear-gradient(90deg, #dc2626 0%, #b91c1c 30%, #dc2626 60%, #b91c1c 100%)',
+                filter: 'blur(0.5px)',
+                borderRadius: '2px',
+                transform: 'rotate(-0.5deg)'
+              }} />
               </span>
             </h1>
           </div>
@@ -152,7 +139,7 @@ const Index = () => {
       {/* Scrolling Company Banner - Updated with larger logos */}
       <section className="w-full bg-transparent py-0">
         <div className="container mx-auto px-4">
-          <div className="w-full max-w-6xl mx-auto overflow-hidden py-[60px]">
+          <div className="w-full max-w-6xl mx-auto overflow-hidden py-[40px]">
             <div className="flex animate-scroll whitespace-nowrap">
               {/* First set of companies */}
               {companies.map((company, index) => <div key={`first-${index}`} className="inline-flex items-center mx-12 text-2xl md:text-3xl font-medium text-foreground">
@@ -200,11 +187,7 @@ const Index = () => {
                 {pressArticles.map((article, index) => <CarouselItem key={index}>
                     <div className="bg-card rounded-lg shadow-lg overflow-hidden mx-2">
                       <div className="overflow-hidden">
-                        <img 
-                          src={article.image} 
-                          alt={article.title} 
-                          className={`w-full h-32 ${article.image === cops ? 'object-cover object-top ' : article.image === chronicPainImage ? 'object-cover object-top grayscale' : 'object-cover'}`}
-                        />
+                        <img src={article.image} alt={article.title} className={`w-full h-32 ${article.image === cops ? 'object-cover object-top ' : article.image === chronicPainImage ? 'object-cover object-top grayscale' : 'object-cover'}`} />
                       </div>
                       <div className="p-4">
                         <div className="flex items-center justify-between text-sm text-muted-foreground mb-2">
