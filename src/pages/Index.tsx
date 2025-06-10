@@ -7,8 +7,8 @@ const Index = () => {
   
   const companies = [
     { name: "Google", count: 221, logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png" },
-    { name: "Palantir", count: 3, logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Palantir_Technologies_logo.svg/320px-Palantir_Technologies_logo.svg.png" },
-    { name: "Lockheed Martin", count: 73, logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Lockheed_Martin_logo.svg/320px-Lockheed_Martin_logo.svg.png" },
+    { name: "Palantir", count: 3, logo: "https://upload.wikimedia.org/wikipedia/commons/3/37/Palantir_company_logo.png" },
+    { name: "Lockheed Martin", count: 73, logo: "https://upload.wikimedia.org/wikipedia/commons/9/99/Lockheed_Martin_logo.svg" },
     { name: "White House", count: 18, logo: "https://upload.wikimedia.org/wikipedia/commons/2/26/WhiteHouse_Logo.png" },
     { name: "Salesforce", count: 382, logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/320px-Salesforce.com_logo.svg.png" }
   ];
