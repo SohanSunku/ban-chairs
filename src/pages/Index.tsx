@@ -94,7 +94,7 @@ const Index = () => {
 
 
       {/* Live Total Counter */}
-      <section className="w-full py-8 bg-background">
+      <section className="w-full bg-background py-0">
         <div className="container mx-auto px-4 text-center">
           <p className="text-muted-foreground text-sm md:text-base">
             Backs Saved: 
