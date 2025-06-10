@@ -72,7 +72,40 @@ const Index = () => {
     console.log("User clicked to join the movement!");
     // This would typically redirect to a signup form or modal
   };
-  return <div className="min-h-screen bg-background flex flex-col">
+
+  const pressArticles = [
+    {
+      title: "Major Coffee Chain Removes All Seating After Employee Health Study",
+      source: "Health Business Daily",
+      date: "Dec 8, 2024",
+      image: starbucksImage,
+      excerpt: "Following a comprehensive study showing 73% reduction in back pain complaints, the popular coffee chain announced the removal of all chairs from their locations."
+    },
+    {
+      title: "Law Enforcement Agencies Adopt Standing-Only Policies",
+      source: "Public Safety News",
+      date: "Dec 5, 2024", 
+      image: cops,
+      excerpt: "Police departments across the nation report improved alertness and reduced fatigue after implementing standing desk policies in their offices."
+    },
+    {
+      title: "Standing Movement Gains Momentum in Corporate America",
+      source: "Business Weekly",
+      date: "Dec 3, 2024",
+      image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=400&h=300&fit=crop",
+      excerpt: "Fortune 500 companies are investing millions in ergonomic standing solutions as the anti-chair movement reshapes workplace culture."
+    },
+    {
+      title: "Medical Community Endorses Chair-Free Workspaces",
+      source: "Medical Tribune",
+      date: "Nov 30, 2024",
+      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop",
+      excerpt: "Leading healthcare professionals cite overwhelming evidence supporting the elimination of prolonged sitting in professional environments."
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-background flex flex-col">
       {/* Header Banner */}
       
       <header className="w-full bg-background border-b border-border">
@@ -125,24 +158,36 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Protest Gallery - Now a Scrolling Carousel */}
+      {/* Press Coverage Section */}
       <section className="w-full py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-8">
-            The Movement in Action
+            In the Press
           </h2>
-          <div className="max-w-4xl mx-auto">
-            <Carousel className="w-full">
-              <CarouselContent>
-                {protestImages.map((image, index) => <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                    <div className="group overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                      <img src={image.src} alt={image.alt} className="w-full h-48 md:h-56 object-cover group-hover:brightness-110 transition-all duration-300" />
-                    </div>
-                  </CarouselItem>)}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {pressArticles.map((article, index) => (
+              <div key={index} className="group bg-background rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 overflow-hidden">
+                <div className="overflow-hidden">
+                  <img 
+                    src={article.image} 
+                    alt={article.title} 
+                    className="w-full h-48 object-cover group-hover:brightness-110 transition-all duration-300" 
+                  />
+                </div>
+                <div className="p-4">
+                  <div className="flex items-center justify-between text-xs text-muted-foreground mb-2">
+                    <span className="font-medium">{article.source}</span>
+                    <span>{article.date}</span>
+                  </div>
+                  <h3 className="font-semibold text-sm mb-2 text-foreground line-clamp-2 leading-tight">
+                    {article.title}
+                  </h3>
+                  <p className="text-xs text-muted-foreground line-clamp-3">
+                    {article.excerpt}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -196,6 +241,8 @@ const Index = () => {
           </p>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
