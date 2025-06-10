@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import starbucksImage from "./images/IMG_1018.jpg";
 import cops from "./images/cops.png"; // Fixed: changed from cop.png to cops.png
 import rfk from "./images/rfk.jpg";
