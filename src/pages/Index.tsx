@@ -96,7 +96,7 @@ const Index = () => {
     source: "Business Insider",
     date: "Dec 28, 2024",
     image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop",
-    excerpt: "Furniture giant faces backlash after internal memo surfaces 'we're not teaching people how to sit, we'll just work with how they already [sit]'"
+    excerpt: "Furniture giant faces backlash after internal memo surfaces in response to chronic pain chrisis 'we're NOT teaching people how to sit, we work with how they already [sit]'"
   }];
 
   return <div className="min-h-screen bg-background flex flex-col">
