@@ -200,7 +200,9 @@ const Index = () => {
               Why?
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              90% of Americans experience back pain, for 60% it becoms chronic. An ache between your shoulder blades, low back pain, a tight neck. Doctors blame a "weak core", chiropractors see us every couple weeks, and we're sold a plethora of nonsense products. The medical industry has failed us. What's the root cause? We talked to the experts and found out.
+              90% of Americans experience back pain, for 60% it becoms chronic. An ache between your shoulder blades, low back pain, a tight neck.
+              <br></br>. 
+              The issue isn't a "weak core" or lack of "xyz product". We talked to ALL the experts. The problem is we don't know how to sit, and our chairs suck. 
             </p>
           </div>
         </div>
