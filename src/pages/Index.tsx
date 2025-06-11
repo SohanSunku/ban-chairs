@@ -8,6 +8,7 @@ import rfk from "./images/rfk.jpg";
 import chronicPainImage from "./images/IMG_0925.jpg";
 import waterImage from "./images/water.jpg";
 import attachmentImage from "./images/Attachment-1.jpeg";
+
 const Index = () => {
   const [totalCount, setTotalCount] = useState(12231);
   const [displayCount, setDisplayCount] = useState(12231);
@@ -97,6 +98,7 @@ const Index = () => {
     image: waterImage,
     excerpt: "Furniture giant faces backlash after internal memo surfaces in response to chronic pain crisis 'we're NOT teaching people how to sit, we work with how they already sit'"
   }];
+
   return <div className="min-h-screen bg-background flex flex-col">
       {/* Header Banner */}
       
@@ -187,7 +189,7 @@ const Index = () => {
                 {pressArticles.map((article, index) => <CarouselItem key={index}>
                     <div className="bg-card rounded-lg shadow-lg overflow-hidden mx-2">
                       <div className="overflow-hidden">
-                        <img src={article.image} alt={article.title} className={`w-full h-32 ${article.image === cops ? 'object-cover object-top ' : article.image === chronicPainImage ? 'object-cover object-center grayscale' : 'object-cover'}`} />
+                        <img src={article.image} alt={article.title} className={`w-full h-32 ${article.image === cops ? 'object-cover object-top ' : article.image === chronicPainImage ? 'object-cover object-top grayscale' : 'object-cover'}`} />
                       </div>
                       <div className="p-4">
                         <div className="flex items-center justify-between text-sm text-muted-foreground mb-2">
