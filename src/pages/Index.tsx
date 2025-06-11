@@ -91,7 +91,7 @@ const Index = () => {
     image: chronicPainImage,
     excerpt: "New study reveals 85% of office workers suffer from chronic back and neck pain, costing companies billions in lost productivity and healthcare expenses."
   }, {
-    title: "Herman Miller Refuses to Teach Proper Sitting",
+    title: "Herman Miller Refuses to Teach Healthy Sitting",
     source: "Business Insider",
     date: "Dec 28, 2024",
     image: waterImage,
@@ -187,7 +187,7 @@ const Index = () => {
                 {pressArticles.map((article, index) => <CarouselItem key={index}>
                     <div className="bg-card rounded-lg shadow-lg overflow-hidden mx-2">
                       <div className="overflow-hidden">
-                        <img src={article.image} alt={article.title} className={`w-full h-32 ${article.image === cops ? 'object-cover object-top ' : article.image === rfk ? 'object-cover object-top' : article.image === chronicPainImage ? 'object-cover object-top grayscale' : article.image === waterImage ? 'object-cover object-center' : 'object-cover'}`} />
+                        <img src={article.image} alt={article.title} className={`w-full h-32 ${article.image === cops ? 'object-cover object-top ' : article.image === chronicPainImage ? 'object-cover object-top grayscale' : 'object-cover'}`} />
                       </div>
                       <div className="p-4">
                         <div className="flex items-center justify-between text-sm text-muted-foreground mb-2">
